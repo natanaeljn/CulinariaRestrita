@@ -19,6 +19,7 @@ export class LoginServiceService {
     return this.http.post(AppConstants.baseLoginTarget, user , { responseType: 'text' }).subscribe(
       (data: any) =>{
         var token = data;
+        localStorage.removeItem("token");
         localStorage.setItem("token", token);
         console.info(localStorage.getItem("token"));
         this.router.navigate(['home']);

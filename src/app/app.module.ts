@@ -9,11 +9,24 @@ import { HomeComponent } from './home/home.component'
 import {RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { LoginComponent } from './login/login.component';
+import { HttpInterceptorModule } from './service/header-interceptor.service';
+import { ReceitasComponent } from './componente/receitas/receitas/receitas.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ReceitasSemGlutenComponent } from './componente/receitas-sem-gluten/receitas-sem-gluten.component';
+import { ReceitasSemLactoseComponent } from './componente/receitas-sem-lactose/receitas-sem-lactose.component';
+import { HeaderComponent } from './header/header.component';
+import { ReceitasSemGlutenIaComponent } from './componente/receitas-sem-gluten-ia/receitas-sem-gluten-ia.component';
+import { ReceitasSemLactoseIaComponent } from './componente/receitas-sem-lactose-ia/receitas-sem-lactose-ia.component';
 
 export const appRouters: Routes=[
   {path : 'home' , component : HomeComponent},
   {path : 'login', component : LoginComponent},
-  {path : '', component : LoginComponent}
+  {path : '', component : LoginComponent},
+  {path: 'listarReceitas' , component : ReceitasComponent},
+  {path:'listarReceitasSemGluten', component:ReceitasSemGlutenComponent},
+  {path:'listarReceitasSemLactose', component:ReceitasSemLactoseComponent},
+  {path:'receitaGlutenIa', component:ReceitasSemGlutenIaComponent},
+  {path:'receitaLactoseIa' , component:ReceitasSemLactoseIaComponent}
 ];
 
 export const routes : ModuleWithProviders<any> = RouterModule.forRoot(appRouters);
@@ -22,14 +35,22 @@ export const routes : ModuleWithProviders<any> = RouterModule.forRoot(appRouters
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    ReceitasComponent,
+    ReceitasSemGlutenComponent,
+    ReceitasSemLactoseComponent,
+    HeaderComponent,
+    ReceitasSemGlutenIaComponent,
+    ReceitasSemLactoseIaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    routes
+    routes,
+    HttpInterceptorModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

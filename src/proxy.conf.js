@@ -2,7 +2,9 @@ const PROXY_CONFIG = [
 {
     context: [
         '/auth',
-        '/auth/register'
+        '/auth/register',
+        '/recipes',
+        '/recipes/getAll'
     ],
     target: "http://localhost:8080",
     secure: false,

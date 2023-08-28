@@ -3,12 +3,14 @@ import { Observable } from 'rxjs';
 import { Receitas } from 'src/app/model/receitas';
 import { ListarReceitasService } from 'src/app/service/listar-receitas.service';
 
+
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-receitas',
+  templateUrl: './receitas.component.html',
+  styleUrls: ['./receitas.component.css']
 })
-export class HomeComponent implements OnInit{
+export class ReceitasComponent implements OnInit{
+
 
   receitas: Observable<Receitas[]> | any;
   p: string|number|undefined;
@@ -29,4 +31,5 @@ export class HomeComponent implements OnInit{
       this.total = data.totalElements
   });
   }
+
 }
