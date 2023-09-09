@@ -4,7 +4,8 @@ const PROXY_CONFIG = [
         '/auth',
         '/auth/register',
         '/recipes',
-        '/recipes/getAll'
+        '/recipes/getAll',
+        '/ingredients'
     ],
     target: "http://localhost:8080",
     secure: false,

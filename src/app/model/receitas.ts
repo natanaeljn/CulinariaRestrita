@@ -4,7 +4,7 @@ export class Receitas {
     nameRecipe : String | any;
     tipo : String | any;
     preparation : String | any;
-    
+    image:String | any;
 
 
 }

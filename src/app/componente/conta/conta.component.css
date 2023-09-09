@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Define uma altura mínima de 100vh para ocupar toda a altura da tela */
+  .min-vh-100 {
+    min-height: 100vh;
+  }

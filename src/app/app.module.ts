@@ -17,6 +17,9 @@ import { ReceitasSemLactoseComponent } from './componente/receitas-sem-lactose/r
 import { HeaderComponent } from './header/header.component';
 import { ReceitasSemGlutenIaComponent } from './componente/receitas-sem-gluten-ia/receitas-sem-gluten-ia.component';
 import { ReceitasSemLactoseIaComponent } from './componente/receitas-sem-lactose-ia/receitas-sem-lactose-ia.component';
+import { ContaComponent } from './componente/conta/conta.component';
+import { CriarReceitaComponent } from './componente/criar-receita/criar-receita.component';
+import { ListarReceitaComponent } from './componente/listar-receita/listar-receita.component';
 
 export const appRouters: Routes=[
   {path : 'home' , component : HomeComponent},
@@ -26,7 +29,10 @@ export const appRouters: Routes=[
   {path:'listarReceitasSemGluten', component:ReceitasSemGlutenComponent},
   {path:'listarReceitasSemLactose', component:ReceitasSemLactoseComponent},
   {path:'receitaGlutenIa', component:ReceitasSemGlutenIaComponent},
-  {path:'receitaLactoseIa' , component:ReceitasSemLactoseIaComponent}
+  {path:'receitaLactoseIa' , component:ReceitasSemLactoseIaComponent},
+  {path:'conta' , component: ContaComponent},
+  {path:'criarReceita' , component: CriarReceitaComponent},
+  {path:'listarReceita/:idRec' , component: ListarReceitaComponent}
 ];
 
 export const routes : ModuleWithProviders<any> = RouterModule.forRoot(appRouters);
@@ -41,7 +47,10 @@ export const routes : ModuleWithProviders<any> = RouterModule.forRoot(appRouters
     ReceitasSemLactoseComponent,
     HeaderComponent,
     ReceitasSemGlutenIaComponent,
-    ReceitasSemLactoseIaComponent
+    ReceitasSemLactoseIaComponent,
+    ContaComponent,
+    CriarReceitaComponent,
+    ListarReceitaComponent
   ],
   imports: [
     BrowserModule,
